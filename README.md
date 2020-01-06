@@ -2,7 +2,7 @@
 
 XML and JSON are two very common ways of storing data and can be interchangeable in most circumstances.
 HTML is ***one*** way of describing the presentation of data.
-HTML is XML-like, so where isn't there a JSON-like language in which HTML can be interchanged with?
+HTML is XML-like, so why isn't there a JSON-like language in which HTML can be interchanged with?
 
 JSML lets you create websites using JSON... for some reason.
 
