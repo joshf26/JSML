@@ -1,5 +1,7 @@
 from xml.etree.ElementTree import Element, tostring
 
+DOCTYPE_HEADER = '<!DOCTYPE html>'
+
 
 def transpile(data):
     root = None
@@ -26,6 +28,10 @@ def transpile(data):
                 for child in element_data['children'][::-1]:
                     queue.append((child, element))
         else:
-            parent.text = element_data
+            if parent is None:
+                # Edge case where entire document is only a string value.
+                return DOCTYPE_HEADER + element_data
+            else:
+                parent.text = element_data
 
-    return '<!DOCTYPE html>' + tostring(root, encoding='unicode', method='html')
+    return DOCTYPE_HEADER + tostring(root, encoding='unicode', method='html')
