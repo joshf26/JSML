@@ -10,7 +10,7 @@ JSML lets you create websites using JSON... for some reason.
 Create a JSON file that looks something like this (see [syntax.md](docs/syntax.md) for more details):
 ```json
 {
-  "element": "p",
+  "tag": "p",
   "children": [
       "Hello World"
   ]

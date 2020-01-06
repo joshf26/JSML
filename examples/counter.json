@@ -1,14 +1,14 @@
 {
-  "element": "html",
+  "tag": "html",
   "attributes": {
     "lang": "en"
   },
   "children": [
     {
-      "element": "head",
+      "tag": "head",
       "children": [
         {
-          "element": "title",
+          "tag": "title",
           "children": [
             "Counter"
           ]
@@ -16,25 +16,25 @@
       ]
     },
     {
-      "element": "body",
+      "tag": "body",
       "children": [
         {
-          "element": "h2",
+          "tag": "h2",
           "children": [
               "Counter"
           ]
         },
         {
-          "element": "p",
+          "tag": "p",
           "children": [
             {
-              "element": "strong",
+              "tag": "strong",
               "children": [
                   "Count: "
               ]
             },
             {
-              "element": "span",
+              "tag": "span",
               "attributes": {
                 "id": "counter"
               },
@@ -45,7 +45,7 @@
           ]
         },
         {
-          "element": "button",
+          "tag": "button",
           "attributes": {
             "onclick": "document.getElementById('counter').innerText++"
           },
@@ -54,7 +54,7 @@
           ]
         },
         {
-          "element": "button",
+          "tag": "button",
           "attributes": {
             "onclick": "document.getElementById('counter').innerText--"
           },

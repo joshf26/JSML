@@ -13,7 +13,7 @@ def transpile(data):
         if isinstance(element_data, dict):
             # Create the new element.
             element = Element(
-                element_data['element'],  # TODO: Need to check for errors.
+                element_data['tag'],  # TODO: Need to check for errors.
                 element_data['attributes'] if 'attributes' in element_data else {},
             )
 

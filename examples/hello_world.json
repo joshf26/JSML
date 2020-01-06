@@ -1,14 +1,14 @@
 {
-  "element": "html",
+  "tag": "html",
   "attributes": {
     "lang": "en"
   },
   "children": [
     {
-      "element": "head",
+      "tag": "head",
       "children": [
         {
-          "element": "title",
+          "tag": "title",
           "children": [
             "Hello World"
           ]
@@ -16,10 +16,10 @@
       ]
     },
     {
-      "element": "body",
+      "tag": "body",
       "children": [
         {
-          "element": "p",
+          "tag": "p",
           "children": [
               "Hello World"
           ]
