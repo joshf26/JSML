@@ -12,7 +12,7 @@ Create a JSON file that looks something like this (see [syntax.md](docs/syntax.m
 {
   "tag": "p",
   "children": [
-      "Hello World"
+    "Hello World"
   ]
 }
 ```
