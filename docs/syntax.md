@@ -4,9 +4,9 @@ However, JSML only supports strings, so avoid using numbers or boolean types for
 
 ### Elements
 An element is a JSON key/value pair collection that contains the following keys:
-- `tag`: the HTML tag the element should have
-- `attributes` (optional): a JSON key/value pair collection that represents the attributes an element has
-- `children` (optional): a JSON ordered list of elements that are children of this one
+- `tag`: the HTML tag this element should have
+- `attributes` (optional): a JSON key/value pair collection that represents the attributes of this element
+- `children` (optional): a JSON ordered list of elements to be children of this one
 
 For example, the following html code:
 ```html
@@ -50,7 +50,7 @@ Would be written as the following JSON file:
 ```
 
 Note that this text is escaped, so you don't have to worry about characters like `<` or `>` getting in the way.
-For example,
+For example:
 ```json
 {
   "tag": "p",
@@ -60,7 +60,7 @@ For example,
 }
 ```
 
-Transpiles to
+Transpiles to:
 ```html
 <p>&lt;b&gt;Hello World&lt;/b&gt;</p>
 ```
