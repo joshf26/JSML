@@ -51,7 +51,7 @@ def transpile(data):
                     raise JSMLError('Top level element is missing "tag" key.')
                 else:
                     raise JSMLError('Element with path "{} -> ?" is missing "tag" key.'.format(
-                        ' -> '.join(element.tag for element in get_path(root, parent))
+                        ' -> '.join(element.tag for element in get_path(root, parent)),
                     ))
 
             # The "tag" key must be a string.
@@ -79,11 +79,23 @@ def transpile(data):
             if 'children' in element_data:
                 for child in element_data['children'][::-1]:
                     queue.append((child, element))
-        else:
+
+        elif isinstance(element_data, str):
             if parent is None:
                 # Edge case where entire document is only a string value.
                 return DOCTYPE_HEADER + element_data
             else:
                 parent.text = element_data
+
+        else:
+            if parent is None:
+                raise JSMLError('Top level element is of invalid data type {}.'.format(
+                    type(element_data).__name__,
+                ))
+            else:
+                raise JSMLError('Element with path "{} -> ?" is of invalid data type {}.'.format(
+                    ' -> '.join(element.tag for element in get_path(root, parent)),
+                    type(element_data).__name__,
+                ))
 
     return DOCTYPE_HEADER + tostring(root, encoding='unicode', method='html')
