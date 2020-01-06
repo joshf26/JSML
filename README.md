@@ -4,7 +4,8 @@ XML and JSON are two common ways of storing data and are interchangeable in most
 HTML is ***one*** way of describing the presentation of data and is XML-like.
 Why isn't there a JSON-like language that is used for describing the presentation of data?
 
-JSML lets you create websites using JSON... for some reason.
+JSML lets you create websites using JSON... for some reason. It is a Python script that converts a JSON file into an
+HTML file.
 
 ### Example Usage
 Create a JSON file that looks something like this (see [syntax.md](docs/syntax.md) for more details):
