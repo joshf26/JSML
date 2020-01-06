@@ -27,6 +27,12 @@ You should now see a file called `index.html` in your working directory with the
 
 For more examples, look in the [examples](examples) folder.
 
+### Command Line Arguments
+You can optionally add the following command line arguments:
+- `-h` or `--help`: display a help message 
+- `-o OUTPUT` or `--output OUTPUT`: specify the output html file name (default is "index.html")
+- `-p`: print to stdout and skip writing to file
+
 ### Disclaimer
 This project is just a proof of concept. I see no actual benefit to making websites this way over HTML. Please do not
 actually use this!
