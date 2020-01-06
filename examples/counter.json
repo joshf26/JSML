@@ -1,0 +1,69 @@
+{
+  "element": "html",
+  "attributes": {
+    "lang": "en"
+  },
+  "children": [
+    {
+      "element": "head",
+      "children": [
+        {
+          "element": "title",
+          "children": [
+            "Counter"
+          ]
+        }
+      ]
+    },
+    {
+      "element": "body",
+      "children": [
+        {
+          "element": "h2",
+          "children": [
+              "Counter"
+          ]
+        },
+        {
+          "element": "p",
+          "children": [
+            {
+              "element": "strong",
+              "children": [
+                  "Count: "
+              ]
+            },
+            {
+              "element": "span",
+              "attributes": {
+                "id": "counter"
+              },
+              "children": [
+                  "0"
+              ]
+            }
+          ]
+        },
+        {
+          "element": "button",
+          "attributes": {
+            "onclick": "document.getElementById('counter').innerText++"
+          },
+          "children": [
+              "+"
+          ]
+        },
+        {
+          "element": "button",
+          "attributes": {
+            "onclick": "document.getElementById('counter').innerText--"
+          },
+          "children": [
+              "-"
+          ]
+        }
+      ]
+    }
+  ]
+}
+

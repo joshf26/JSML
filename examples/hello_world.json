@@ -1,0 +1,31 @@
+{
+  "element": "html",
+  "attributes": {
+    "lang": "en"
+  },
+  "children": [
+    {
+      "element": "head",
+      "children": [
+        {
+          "element": "title",
+          "children": [
+            "Hello World"
+          ]
+        }
+      ]
+    },
+    {
+      "element": "body",
+      "children": [
+        {
+          "element": "p",
+          "children": [
+              "Hello World"
+          ]
+        }
+      ]
+    }
+  ]
+}
+
