@@ -19,6 +19,24 @@ def get_path(root, element):
     return path
 
 
+def _check_type(data, key, value_type, root, parent, tag=None):
+    if key in data and not isinstance(data[key], value_type):
+        if parent is None:
+            raise JSMLError('Top level element\'s "{}" key must be a {} (not {}).'.format(
+                key,
+                value_type.__name__,
+                type(data[key]).__name__,
+            ))
+        else:
+            raise JSMLError('Element with path "{} -> {}"\'s "{}" key must be a {} (not {}).'.format(
+                ' -> '.join(element.tag for element in get_path(root, parent)),
+                tag if tag is not None else '?',
+                key,
+                value_type.__name__,
+                type(data[key]).__name__,
+            ))
+
+
 def transpile(data):
     root = None
     queue = [(data, None)]
@@ -35,6 +53,15 @@ def transpile(data):
                     raise JSMLError('Element with path "{} -> ?" is missing "tag" key.'.format(
                         ' -> '.join(element.tag for element in get_path(root, parent))
                     ))
+
+            # The "tag" key must be a string.
+            _check_type(element_data, 'tag', str, root, parent)
+
+            # The "attributes" key must be a dict.
+            _check_type(element_data, 'attributes', dict, root, parent, element_data['tag'])
+
+            # The "children" key must be a list.
+            _check_type(element_data, 'children', list, root, parent, element_data['tag'])
 
             # Create the new element.
             element = Element(
